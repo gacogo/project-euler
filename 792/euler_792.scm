@@ -1,5 +1,5 @@
 ;stream functions can be found under utils/
-
+;tested on drracket (simply scheme profile)
 (define (factorial n)
   (fact-iter n 1 1))
 
