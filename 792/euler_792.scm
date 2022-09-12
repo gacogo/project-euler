@@ -1,5 +1,20 @@
 ;stream functions can be found under utils/
 
+(define (factorial n)
+  (fact-iter n 1 1))
+
+(define (fact-iter n start accum)
+  (if (> start n)
+      accum
+      (fact-iter n (+ start 1) (* start accum))))
+
+
+(define (map-stream proc str)
+  (if (null? str)
+      the-empty-stream
+      (cons-stream (proc (stream-car str))
+                   (map-stream proc (stream-cdr str)))))
+
 
 (define (findlargest-r r)
   "Calculates v2"
